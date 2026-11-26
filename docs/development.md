@@ -28,7 +28,7 @@
 | cpr-plugin | `scripts/install_packager.py` 自动使用 `backend/Cargo.toml` 中 SDK 的固定提交安装 |
 
 ```bash
-git clone https://github.com/Victor-Tau/cpr-jzjc.git
+git clone https://github.com/monkeylxb/cpr-jzjc.git
 cd cpr-jzjc
 python3 -m venv .venv
 source .venv/bin/activate

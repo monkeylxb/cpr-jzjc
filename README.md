@@ -1,14 +1,14 @@
 # CPR 账号降智检测
 
-[![Release](https://img.shields.io/github/v/release/Victor-Tau/cpr-jzjc)](https://github.com/Victor-Tau/cpr-jzjc/releases/latest)
+[![Release](https://img.shields.io/github/v/release/monkeylxb/cpr-jzjc)](https://github.com/monkeylxb/cpr-jzjc/releases/latest)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
-[![CPR: 3.54.0](https://img.shields.io/badge/CPR-3.54.0-2563eb.svg)](https://github.com/zyycn/codex-proxy-rs)
+[![CPR: 3.55.3](https://img.shields.io/badge/CPR-3.55.3-2563eb.svg)](https://github.com/zyycn/codex-proxy-rs/releases/tag/v3.55.3)
 
 在 **Codex Proxy RS（CPR）** 管理页面中，批量检测账户的模型输出、查看指纹匹配结果，并按自定义规则执行复测、定时检查和账户处理。
 
 项目使用 [lm-detector](https://github.com/Ikaleio/lm-detector) 的数字指纹方法与参考库，比较账户实际回答与候选模型的匹配程度。评分内核是 lm-detector 官方 Rust SDK 的原生移植，直接在插件进程内运行，不再需要 Python 运行时。检测、配置和报告均在插件页面完成。
 
-**[下载插件](https://github.com/Victor-Tau/cpr-jzjc/releases/latest) · [使用指南](docs/usage.md) · [更新日志](CHANGELOG.md) · [开发与构建](docs/development.md) · [反馈问题](https://github.com/Victor-Tau/cpr-jzjc/issues)**
+**[下载插件](https://github.com/monkeylxb/cpr-jzjc/releases/latest) · [使用指南](docs/usage.md) · [更新日志](CHANGELOG.md) · [开发与构建](docs/development.md) · [反馈问题](https://github.com/Victor-Tau/cpr-jzjc/issues)**
 
 ## 功能
 
@@ -44,8 +44,8 @@
 
 | 项目 | 当前发布版本要求 |
 | --- | --- |
-| 插件版本 | **2.1.1** |
-| CPR 宿主 | **>=3.54.0、<3.55.0** |
+| 插件版本 | **2.1.2** |
+| CPR 宿主 | **>=3.54.0、<3.56.0** |
 | 平台 | **Linux x86_64 / ARM64（aarch64），glibc 2.36+** |
 | 运行模式 | `trustedProcess` |
 | 评分内核 | lm-detector Rust 原生实现，内置参考库与检测器，无需 Python 或额外服务 |
@@ -54,7 +54,7 @@
 
 ### 首次安装
 
-1. 从 [Releases](https://github.com/Victor-Tau/cpr-jzjc/releases/latest) 选择与宿主架构匹配的安装包：x86_64 对应 `*-x86_64-unknown-linux-gnu.tar.gz`，ARM64 对应 `*-aarch64-unknown-linux-gnu.tar.gz`，可同时下载 `.sha256` 校验文件。
+1. 从 [Releases](https://github.com/monkeylxb/cpr-jzjc/releases/latest) 选择与宿主架构匹配的安装包：x86_64 对应 `*-x86_64-unknown-linux-gnu.tar.gz`，ARM64 对应 `*-aarch64-unknown-linux-gnu.tar.gz`，可同时下载 `.sha256` 校验文件。
 2. 在 CPR 中打开「插件管理 → 安装插件 → 上传包」，上传下载的安装包并启用。
 3. 打开「账号降智检测 → 参数配置」，选择已有计量 Key，确认请求模型及判定规则，点击「保存全部参数」。
 4. 回到「账户检测」，先选择一个账户执行检测，在报告中查看结果，再按需启用批量检测或定时检查。
@@ -70,6 +70,8 @@
 ### 更新现有实例
 
 在宿主插件管理中上传新版本包，更新并切换**现有插件实例**。同实例升级保留配置、计划、检测历史和指纹库；升级前也可在「参数配置 → 配置备份」导出配置。
+
+[2.1.2](https://github.com/monkeylxb/cpr-jzjc/releases/tag/v2.1.2) 适配 CPR 3.55.3，兼容 CPR 3.54.x 和 3.55.x。
 
 [2.1.1](https://github.com/Victor-Tau/cpr-jzjc/releases/tag/v2.1.1) 适配 CPR 3.54.0。[2.1.0](https://github.com/Victor-Tau/cpr-jzjc/releases/tag/v2.1.0) 新增「移回正常」与两种降智判定规则，宿主范围不变。[2.0.0](https://github.com/Victor-Tau/cpr-jzjc/releases/tag/v2.0.0) 将检测内核切换为 lm-detector 并移除 Python 运行时，宿主范围与 1.28.0 相同（CPR 3.53.1）；升级会替换旧指纹库并结束进行中的检测，详见 [发行说明](docs/releases/v2.0.0.md)。[1.28.0](https://github.com/Victor-Tau/cpr-jzjc/releases/tag/v1.28.0) 适配 CPR 3.53.1；[1.27.0](https://github.com/Victor-Tau/cpr-jzjc/releases/tag/v1.27.0) 适配 CPR 3.52.2；[1.26.0](https://github.com/Victor-Tau/cpr-jzjc/releases/tag/v1.26.0) 适配 CPR 3.51.0；[1.25.0](https://github.com/Victor-Tau/cpr-jzjc/releases/tag/v1.25.0) 适配 CPR 3.49.0；[1.24.0](https://github.com/Victor-Tau/cpr-jzjc/releases/tag/v1.24.0) 适配 CPR 3.48.0；[1.23.0](https://github.com/Victor-Tau/cpr-jzjc/releases/tag/v1.23.0) 适配 CPR 3.47.0。同实例升级保留配置、计划、历史和指纹库，x86_64 与 ARM64 分别下载对应安装包。
 
