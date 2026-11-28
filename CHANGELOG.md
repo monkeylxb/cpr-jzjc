@@ -8,6 +8,7 @@
 
 | 插件版本 | CPR 宿主范围 |
 | --- | --- |
+| 2.1.7 | >=3.54.0、<3.59.0 |
 | 2.1.5 | >=3.54.0、<3.58.0 |
 | 2.1.4 | >=3.54.0、<3.58.0 |
 | 2.1.3 | >=3.54.0、<3.57.0 |
@@ -44,12 +45,19 @@
 
 升级时通过宿主更新现有插件实例，可保留兼容 schema 下的配置、计划、历史与指纹库。版本中特有的数据保留变化在对应条目注明。
 
+## [2.1.7](https://github.com/monkeylxb/cpr-jzjc/releases/tag/v2.1.7) — 2026-11-28
+
+- 适配 CPR 3.58.0，宿主范围为 `>=3.54.0,<3.59.0`，SDK 和官方打包工具固定到 CPR v3.58.0。
+- 提供 Linux x86_64 和 ARM64 安装包及 SHA-256 校验文件。同实例升级可保留配置、计划、检测历史和指纹库。
+
+[详细说明](docs/releases/v2.1.7.md) · [验证记录](docs/verification.md)
+
 ## [2.1.5](https://github.com/monkeylxb/cpr-jzjc/releases/tag/v2.1.5) — 2026-11-27
 
 - 适配 CPR 3.57.1，宿主范围为 `>=3.54.0,<3.58.0`。CPR 3.57.1 的插件 SDK 和官方打包工具与 3.57.0 一致，继续使用现有依赖提交。
 - 提供 Linux x86_64 和 ARM64 安装包及 SHA-256 校验文件。同实例升级保留配置、计划、检测历史和指纹库。
 
-[详细说明](docs/releases/v2.1.5.md) · [验证记录](docs/verification.md)
+[详细说明](docs/releases/v2.1.5.md) · [验证记录](docs/verification-v2.1.5.md)
 
 ## [2.1.4](https://github.com/monkeylxb/cpr-jzjc/releases/tag/v2.1.4) — 2026-11-27
 
